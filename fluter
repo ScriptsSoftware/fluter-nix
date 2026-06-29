@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+case "$1" in
+
+download)
+    curl -LO "$2"
+    ;;
+
+get)
+    curl "$2"
+    ;;
+
+post)
+    curl -X POST -H "Content-Type: application/json" -d "$3" "$2"
+    ;;
+
+*)
+    echo "Fluter - Cliente HTTP"
+    echo "Uso:"
+    echo " fluter download URL"
+    echo " fluter get URL"
+    echo " fluter post URL JSON"
+    ;;
+
+esac
